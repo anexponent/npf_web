@@ -1,0 +1,450 @@
+<!DOCTYPE HTML>
+<!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en-gb" class="isie ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> 
+<html lang="en-gb" class="no-js"> <!--<![endif]-->
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+<title>Nigeria Police Force | Home</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link id="default-css" href="style.css" rel="stylesheet" type="text/css">
+<link id="shortcodes-css" href="css/shortcodes.css" rel="stylesheet" type="text/css">
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+<link rel='stylesheet' id='layerslider-css' href="css/layerslider.css" type='text/css' media='all' />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link id="skin-css" href="skins/maroon/style.css" rel="stylesheet" media="all" />
+<!--[if IE 7]>
+<link href="css/font-awesome-ie7.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if lt IE 9]>`
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Merriweather:400,900italic,900,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Domine:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--jquery-->
+<script src="js/modernizr-2.6.2.min.js"></script>
+
+<style type="text/css">
+<!--
+.style3 {color: #FFFFFF}
+-->
+</style>
+</head>
+<body class="boxed" style="background-image:url(images/patterns/pattern1.jpg);">
+	<!--wrapper starts-->
+    <div class="wrapper">
+        <!--inner-wrapper starts-->
+        <div class="inner-wrapper">
+            <!--header starts-->
+            <header>
+                <!--top-bar starts-->
+                <div class="top-bar">
+                    <div class="container">
+                        <ul class="dt-sc-social-icons">
+                            <li><a href="https://www.facebook.com/ngpolice/" target="_blank" title="Facebook"><span class="fa fa-facebook"></span></a></li>
+                            <li><a href="https://twitter.com/@policeNG" target="_blank" title="Twitter"><span class="fa fa-twitter"></span></a></li>
+                            <li><a href="#" target="_blank" title="Youtube"><span class="fa fa-youtube"></span></a></li>
+                            <li><a href="https://www.instagram.com/nigeriapoliceforce/" target="_blank" title="Instagram"><span class="fa fa-instagram"></span></a></li>
+                        </ul>
+                        <div class="dt-sc-contact-number">
+                            <a href="info/2023_General_Election_Situation_Monitoring.pdf" class="style2">  <span class="style3">2023 GENERAL ELECTIONS SITUATION ROOM NUMBERS
+                            <span class="fa fa-phone"> </span>
+                            <a href="information/emergency_number.php" class="style2">  <span class="style3">Emergency</span> <span class="style3">Numbers</span> </a> 
+                        </div>
+                    </div>
+                </div>
+                <!--top-bar ends-->
+                <div class="container">
+                    <div class="logo">
+                        <a href="index.html" title="NPF"><img src="images/logo.png" alt="NPF" title="NPF"></a>
+                    </div>
+                    <div class="alignright">  <a class="dt-sc-bordered-button" href="info/contact_pros.php"> CONTACTS OF PROs </a>                    </div>
+                    
+              </div>
+                <!--menu-container starts-->
+                <div id="menu-container">
+                    <div class="container">
+                        <!--nav starts-->
+                        <nav id="main-menu">
+                            <div class="dt-menu-toggle" id="dt-menu-toggle">Menu<span class="dt-menu-toggle-icon"></span></div>
+                            <ul id="menu-main-menu" class="menu">
+                                <li class="current_page_item"> <a href="index.php"> Home </a> </li>
+                            <li class="menu-item-simple-parent menu-item-depth-0"> <a href="#"> About Us </a> 
+                                    <ul class="sub-menu">
+                                        
+                                        <li><a href='aboutus/vision_mission.php'>Vision &amp; Mission</a></li>
+                                        <li><a href='aboutus/IGP_Secretariat.php'>IGP Secretariat</a></li>
+                                        <li><a href='aboutus/History_Nigeria_Police.php'>History of Nigeria Police</a></li>
+                                        <li><a href='aboutus/Past_IGs.php'>Past IGPs</a></li>
+                                        <li><a href='aboutus/Force_Structure.php'>Force Structure</a></li>
+                                        <li><a href='aboutus/Management_Team.php'>Management Team</a></li>
+                                        
+                                        
+                                    </ul>  
+                                <a class="dt-menu-expand">+</a>                                </li>
+                            <li class="menu-item-simple-parent menu-item-depth-0"> <a href="#"> Department </a> 
+                                    <ul class="sub-menu">
+                                        <li><a href='departments/admin_dept.php'>Finance &amp; Administration</a></li>
+                                        <li><a href='departments/operations.php'>Operations</a></li>
+                                        <li><a href='departments/logistics_supply.php'>Logistics &amp; Supply</a></li>
+                                        <li><a href='departments/investigation.php'>Crime Investigation</a></li>
+                                        <li><a href='departments/training.php'>Training</a></li>
+                                        <li><a href='departments/Research_planning.php'>Research &amp; Planning</a></li>
+                                        <li><a href='departments/department_ict.php'>Information &amp; Communication</a></li>
+                                        <li><a href='departments/force_secretary.php'>Force Secretary</a></li>
+                                        <li><a href='departments/fib.php'>Force Inteligence Bureau</a></li>
+                                    </ul>  
+                                <a class="dt-menu-expand">+</a>                                </li>
+                                
+                 <li class="menu-item-simple-parent menu-item-depth-0"> <a href="#""> Zones </a> 
+                                    <ul class="sub-menu">
+                                        <li><a href='zones/zone1.php'>Zone 1</a>  </li>
+                                        <li><a href='zones/zone2.php'>Zone 2</a> </li>
+                                        <li><a href='zones/zone3.php'>Zone 3</a>  </li>
+                                        <li><a href='zones/zone4.php'>Zone 4</a> </li>
+                                        <li><a href='zones/zone5.php'>Zone 5</a></li>
+                                        <li><a href='zones/zone6.php'>Zone 6</a></li>
+                                        <li><a href='zones/zone7.php'>Zone 7</a></li>
+                                        <li><a href='zones/zone8.php'>Zone 8</a></li>
+                                        <li><a href='zones/zone9.php'>Zone 9</a></li>
+                                        <li><a href='zones/zone10.php'>Zone 10</a></li>
+                                        <li><a href='zones/zone11.php'>Zone 11</a></li>
+                                        <li><a href='zones/zone12.php'>Zone 12</a></li>
+                                         <li><a href='zones/zone13.php'>Zone 13</a>  </li>
+                                        <li><a href='zones/zone14.php'>Zone 14</a> </li>
+                                        <li><a href='zones/zone15.php'>Zone 15</a></li>
+                                        <li><a href='zones/zone16.php'>Zone 16</a></li>
+                                        <li><a href='zones/zone17.php'>Zone 17</a></li>
+                                    </ul>  
+                                <a class="dt-menu-expand">+</a>                                </li>               
+                            <li class="menu-item-simple-parent menu-item-depth-0"> <a href="#"> Formations </a> 
+                                    <ul class="sub-menu">
+                                        <li><a href='formations/port_authority.php'>Port Authority Police</a></li>
+                                        <li><a href='formations/police_cooperative.php'>Police Cooperative</a></li>
+                                        <li><a href='formations/police_academy.php'>Police Academy Kano</a></li>
+                                        <li><a href='formations/Marine_police.php'>Marine Police</a></li>
+                                       <li><a href='formations/anti_terrorism.php'>Counter Terrorism Squad</a></li>
+                                           
+                                    </ul>  
+                                     
+                  <li class="menu-item-simple-parent menu-item-depth-0"> <a href="#"> Units </a> 
+                                    <ul class="sub-menu">
+                                        <li><a href='units/police_sports.php'>Nigeria Police &amp; Sport</a></li>
+                                        <li><a href='units/airwing.php'>Police Air Wing</a></li>
+                                        <li><a href='units/medical.php'>Police Medical Services</a></li>
+                                           
+                                    </ul>  
+                                <a class="dt-menu-expand">+</a>                                </li>
+                                
+                                
+                              
+                 <li class="menu-item-simple-parent menu-item-depth-0"> <a href="#"> Information </a> 
+                                    <ul class="sub-menu">
+                                         <li><a href='info/peace_keeping.php'>Peace Keeping Operation</a></li>
+                                         <li><a href='#'>Security Tips</a></li>
+                                         <li><a href='info/force_pro.php'>Force PRO</a></li>
+                                         <li><a href='info/contacts_mgt.php'>Contact Us</a></li>
+                    </ul>
+                </li>
+                
+                                    </ul> 
+                          </ul>
+                        </nav>
+                        <!--nav ends-->
+                       <!--
+                        <form method="get" id="searchform" action="#">
+                            <input id="s" name="s" type="text" value="Search..." class="text_input" onBlur="if(this.value==''){this.value='Search...';}" onFocus="if(this.value =='Search...') {this.value=''; }">
+                            <input name="submit" type="submit" value="">
+                        </form> 
+                        -->
+                  </div>
+              </div>
+                <!--menu-container ends-->
+            </header>
+            <!--header ends-->
+            <!--main starts-->
+            <div id="main">
+            
+                <!--slider starts-->
+                <div id="slider">
+                    <div id="layerslider_2" class="ls-wp-container" style="width:100%;height:660px;margin:0 auto;margin-bottom: 0px;">
+                    
+                    
+                        <div class="ls-slide" data-ls=" transition2d: all;">
+                            <img src="images/LiousEdetHouse.jpg" class="ls-bg" alt="Slide background" />
+                            <h2 class="ls-l caption-1" style="top:555px;left:7px; font-size:20px; padding:15px 30px 15px 25px;white-space: nowrap;" data-ls="offsetxin:-80;delayin:1000;skewxin:-80;"> Louis Edet House, Force Headquarters </h2>
+                        </div> 
+                        
+                        <div class="ls-slide" data-ls=" transition2d: all;">
+                            <img src="images/mopol.jpg" class="ls-bg" alt="Slide background" />
+                            <h2 class="ls-l caption-1" style="top:555px;left:7px; font-size:20px; padding:15px 30px 15px 25px;white-space: nowrap;" data-ls="offsetxin:-80;delayin:1000;skewxin:-80;"> Nigeria Police Mobile Force </h2>
+                        </div>
+                        
+                        
+                         <div class="ls-slide" data-ls=" transition2d: all;">
+                            <img src="images/airwing.jpg" class="ls-bg" alt="Slide background" />
+                            <h2 class="ls-l caption-1" style="top:555px;left:7px; font-size:20px; padding:15px 30px 15px 25px;white-space: nowrap;" data-ls="offsetxin:-80;delayin:1000;skewxin:-80;"> Rapid Response Sqaud </h2>
+                        </div>
+                        
+                        <div class="ls-slide" data-ls=" transition2d: all;">
+                            <img src="images/policecar.jpg" class="ls-bg" alt="Slide background" />
+                            <h2 class="ls-l caption-1" style="top:555px;left:7px; font-size:20px; padding:15px 30px 15px 25px;white-space: nowrap;" data-ls="offsetxin:-80;delayin:1000;skewxin:-80;"> Fleet of Police Vehicles</h2>
+                        </div>
+                        
+                        
+                    </div>
+                  
+                </div>
+                <!--slider ends-->
+    
+                <!--primary starts-->
+                <section id="primary" class="content-full-width">
+                    <!--container starts-->
+                  <div class="container">
+                        <h2 class="dt-sc-hr-title">  The Inspector General of Police Speech</h2>
+                        
+                        <div class="column dt-sc-one-fourth first" align="center">
+                        <img align="middle" src="images/igp.jpg">
+                          <!--  IGP Usman Alkali Baba, psc (+),  NPM, NEAPS, fdc, CFR                          </br>-->
+                          <!--<p align="center"> Inspector General of Police  </p>-->
+                        </div>
+                        
+                        <div class="column dt-sc-three-fourth">
+                            <h6><p align="justify">I hereby welcome all Strategic Police Managers comprising
+Senior Police Officers of the rank of Commissioners of Police and
+above to this maiden conference following my appointment as the
+22nd Indigenous Acting Inspector-General of Police by the
+President, Commander in Chief of the Armed Forces, His
+Excellency, Bola Ahmed Tinubu, GCFR, on 19th June, 2023, and
+my subsequent assumption of office on the 21st of June, 2023
+following the traditional handing/taking over ceremony at the
+Louis Edet House, Force Headquarters, Abuja.
+                             </p></h6>
+                             <h6><p align="justify">
+                             2. I am deeply honored to address this gathering of esteemed Senior Police Managers who represent the backbone of our nation’s policing architecture. Together, we shall embark on a
+                                mission to uphold justice, fairness, protect human dignity, and restore standards and values of the Nigeria Police Force. Let me make one thing abundantly clear, the days of complacency and indifference are over. We are no longer mere enforcers of the
+law, we are the vanguards of justice. It is our duty to ensure that
+every citizen, regardless of his/her background, feels safe and
+secure at all times.
+                             </p></h6>
+                             
+                             <h6><p align="justify">
+                             3. Without mincing words, our nation faces an array of complex
+security challenges that demand our unwavering commitment and
+resolve. We stand at a critical juncture where the trust of the
+people in our institution hangs in the balance. It is our duty to reignite that trust, to be the beacon of hope in times of despair,
+and to foster an environment where safety and justice are not
+mere illusions, but the foundations upon which our nation thrives.
+                             </p></h6>
+                             
+                             <h6><p align="justify">
+                             
+                             </p></h6>
+                            <h6 align="justify">&nbsp;</h6>
+ 
+ 
+
+                            <!--<a href="information/igp_speech.php" class="button alignright"> Read More<span class="fa fa-caret-right"></span> </a>   -->
+
+                            <a class="dt-sc-button alignright" href="information/igp_speech.php">Read More</a>
+                    </div>
+                    <div class="dt-sc-hr-invisible-medium"></div>
+                        
+                         
+                       <!--dt-sc-one-half starts-->
+                        <div class="column dt-sc-one-half first">
+                        	<h2 class="dt-sc-hr-icon-title"> <span class="fa fa-pencil"></span> Recent Press Release </h2>
+                            <!--dt-sc-toggle-frame-set starts-->
+                            <div class="widget_recent_entries">
+                                <ul>
+                                
+                                
+                                    <li>
+                                      <div class="entry-meta">        <p class="date"> <span class="fa fa-calendar-o"></span> April 20, 2023 		</p>        <a href=information/pressdetails.php?news_id=829 class="comments"> <span class="fa fa-comment"></span> Read More </a>   </div>    <div class="entry-title">      <h6 align =justify>       <a href=information/pressdetails.php?news_id=829 > POLICE WELFARE: IGP DIRECTS IMMEDIATE COMMENCEMENT OF PROMOTION PROCESS FOR INSPECTORS, RANK & FILE      </a></h6>   </div>   <div class="entry-meta">        <p class="date"> <span class="fa fa-calendar-o"></span> April 19, 2023 		</p>        <a href=information/pressdetails.php?news_id=828 class="comments"> <span class="fa fa-comment"></span> Read More </a>   </div>    <div class="entry-title">      <h6 align =justify>       <a href=information/pressdetails.php?news_id=828 > POLICE REFORM: NPF PARTNERS PORTO ON CAPACITY BUILDING WORKSHOP FOR NEWLY PROMOTED STRATEGIC POLICE MANAGERS<br>
+- As IGP Reassure Continuous Capacity Building for Personnel      </a></h6>   </div>                                     </li>
+                                </ul> 
+                                <a href="press/press_release.php" class="dt-sc-simple-button alignright"> View All Press Releases<span class="fa fa-caret-right"></span> </a>                            </div>
+
+                            <!--dt-sc-toggle-frame-set ends-->
+                        </div>
+                        <!--dt-sc-one-half ends-->
+                        
+                        <!--dt-sc-one-half starts-->
+                        <div class="column dt-sc-one-half">
+                        	<h2 class="dt-sc-hr-icon-title"> <span class="fa fa-file-text"></span> Quick Links</h2>
+                            
+                        <!--dt-sc-one-fourth starts-->
+                        <div class="column dt-sc-one-fourth first">
+                            <div class="dt-sc-team">
+                                <div class="dt-sc-team-thumb"><img src="images/CRU_Logo.png" alt="" width="118" height="124" title=""></div>
+                  <div class="dt-sc-team-content">
+                                    <h5><a href="#" class="dt-sc-button">View  </a> </h5>
+                                    </div>
+                            </div>
+                        </div>
+                        <!--dt-sc-one-fourth ends-->
+                        
+                        <!--dt-sc-one-fourth starts-->
+                        <div class="column dt-sc-one-fourth first">
+                            <div class="dt-sc-team">
+                                <div class="dt-sc-team-thumb">                        	
+                                    <img src="images/tabs2.png" alt="" width="118" height="125" title="">                                </div>
+                              <div class="dt-sc-team-content">
+                                <h5><a href="#"  class="dt-sc-button">View  </a> </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!--dt-sc-one-fourth ends-->
+                        
+                       <!--dt-sc-one-fourth starts-->
+                        <div class="column dt-sc-one-fourth first">
+                            <div class="dt-sc-team">
+                                <div class="dt-sc-team-thumb">                        	
+                                    <img src="images/polac.png" alt="" width="118" height="124" title="">                                </div>
+                              <div class="dt-sc-team-content">
+                                  <h5><a href="http://www.polac.edu.ng/" target="_blank" class="dt-sc-button">View  </a> </h5>
+                                    </div>
+                            </div>
+                        </div>
+                        <!--dt-sc-one-fourth ends-->
+                        
+                        <!--dt-sc-one-fourth starts-->
+                        <div class="column dt-sc-one-fourth first">
+                            <div class="dt-sc-team">
+                                <div class="dt-sc-team-thumb">
+                                		<img src="images/psc.png" alt="" width="118" height="124" title=""></div>
+                                <div class="dt-sc-team-content">
+                                    <h5><a href="#" class="dt-sc-button">View  </a> </h5>
+                                    </div>
+                            </div>
+                        </div>
+                        <!--dt-sc-one-fourth ends-->
+                                             
+                        </div>
+                        <!--dt-sc-one-half ends--> 
+
+                            
+                        
+                       
+                        
+                        <div class="dt-sc-clear"></div>
+                         
+                        <div class="dt-sc-hr-image"></div>
+                       
+                        <div class="dt-sc-hr-invisible-small"></div> 
+                        
+                  </div>
+                    <!--container ends-->
+                </section>
+                <!--primary ends-->  
+                           
+                
+                
+            </div>
+            <!--main ends-->
+            
+            <!--footer starts-->
+            <footer>
+                <!--footer-widgets-wrapper starts-->
+                <div class="footer-widgets-wrapper">
+                    <!--container starts-->
+                    <div class="container">
+                        <div class="footer_top">
+                                <ul class="dt-sc-social-icons">
+                                <li><a href="https://www.facebook.com/ngpolice/"  target="_blank"title="Facebook"><span class="fa fa-facebook"></span></a></li>
+                                <li><a href="https://twitter.com/@policeNG" target="_blank" title="Twitter"><span class="fa fa-twitter"></span></a></li>
+                                <li><a href="#" title="Youtube"><span class="fa fa-youtube"></span></a></li>
+                            	<li><a href="https://www.instagram.com/nigeriapoliceforce/"  target="_blank" title="Instagram"><span class="fa fa-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="column dt-sc-two-sixth first">
+                            <aside class="widget widget_text">
+                            <h3 class="widgettitle">Contact Address</h3>
+                                <div class="textwidget">
+                                Louis Edet House <br> Force Headquartes <br> Garki,Shehu Shagari Way, Abuja 
+                                	
+                                    <p class="dt-sc-contact-info"><span><i class="fa fa-phone"></i> Phone: </span> +234 803 837 5844 </p>
+                                    
+                                    <p class="dt-sc-contact-info"><span><i class="fa fa-envelope"></i> Email: </span> pressforabuja@police.gov.ng </p>
+                                </div>
+                            </aside>
+                        </div>
+                        
+                         
+                        
+                        <div class="column dt-sc-two-sixth">
+                            <aside class="widget widget_text">
+                                <h3 class="widgettitle"> QUICK LINKS</h3>
+                                <ul>
+                                  <li> <a href="http://www.npf.gov.ng/tinted/" target="_blank" >Tinted Permit</a> </li>
+                                  <li> <a href="information/emergency_number.php">Emergency Numbers</a> </li>
+                                  <li> <a href="#"  target="_blank"> Complaint  Response Unit (CRU)</a> </li>
+                              </ul>
+                            </aside>
+                        </div>
+                        
+                       
+                        
+                        <div class="column dt-sc-two-sixth">
+                            <aside class="widget widget_text">
+                                <h3 class="widgettitle"> Relevant Websites LINKS </h3>
+                                <ul>
+                                  <li> <a href="#">Police Service Commission</a> </li>
+                                  <li> <a href="http://www.interior.gov.ng/"  target="_blank">Federal Ministry of Interior</a> </li>
+                                  <li> <a href="http://www.polac.edu.ng/"  target="_blank">Nigeria Police Academy</a> </li>
+                                  <li> <a href="http://www.army.mil.ng/"  target="_blank">Nigerian Army</a> </li>
+                                  <li> <a href="http://www.customs.gov.ng/"  target="_blank">Nigeria Customs Services</a> </li>
+                              </ul>
+                            </aside>
+                        </div>
+                        
+                    </div>    
+                    <!--container ends-->
+                </div>
+                <!--footer-widgets-wrapper ends-->  
+                <div class="copyright">
+                    <div class="container">
+                        <div class="copyright-info">    Copyright ©  2019  Powered By Department of ICT, Nigeria Police Force   All Rights Reserved.
+
+</div>
+                        
+                    </div>
+                </div>  
+            </footer>
+            <!--footer ends-->
+        </div>
+        <!--inner-wrapper ends-->    
+    </div>
+    <!--wrapper ends-->
+    
+    <a href="" title="Go to Top" class="back-to-top"> <span class="fa fa-angle-up"></span> </a>
+    <!--Java Scripts-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-migrate.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/jquery-easing-1.3.js"></script>
+    <script type="text/javascript" src="js/jquery.sticky.js"></script>
+    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="js/jquery.smartresize.js"></script> 
+    <script type="text/javascript" src="js/shortcodes.js"></script>   
+    
+    <script type="text/javascript" src="js/custom.js"></script>
+    
+    <!-- Layer Slider --> 
+    <script type="text/javascript" src="js/jquery-transit-modified.js"></script> 
+    <script type="text/javascript" src="js/layerslider.kreaturamedia.jquery.js"></script> 
+    <script type='text/javascript' src="js/greensock.js"></script> 
+    <script type='text/javascript' src="js/layerslider.transitions.js"></script> 
+        
+    <script type="text/javascript">var lsjQuery = jQuery;</script><script type="text/javascript"> lsjQuery(document).ready(function() { if(typeof lsjQuery.fn.layerSlider == "undefined") { lsShowNotice('layerslider_2','jquery'); } else { lsjQuery("#layerslider_2").layerSlider({responsiveUnder: 1240, layersContainer: 1170, skinsPath: 'js/layerslider/skins/'}) } }); </script>
+    
+</body>
+</html>
