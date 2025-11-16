@@ -11,6 +11,9 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Carbon;
 use RealRashid\SweetAlert\Facades\Alert;
+use Intervention\Image\Facades\Image;
+use Mews\Purifier\Facades\Purifier;
+
 
 class serviceController extends Controller
 {
@@ -25,26 +28,41 @@ class serviceController extends Controller
         return view('backend.services.service_add');
     } //end method service.index add_view_service 
 
-    public function StoreService(Request $request){
-
-        // dd($request->all());
-
+    public function StoreService(Request $request)
+    {
+        // Validate input
         $validatedData = $request->validate([
-            'title' => 'required',           
-            'short_description' => 'required',           
-            'long_description' => 'required',           
+            'title' => 'required|string|max:255',
+            'service_tag' => 'nullable|string|max:100',
+            'short_description' => 'required|string|max:500',
+            'long_description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
 
-        Service::insert([
+        $serviceData = [
             'title' => $request->title,
             'service_tag' => $request->service_tag,
             'short_description' => $request->short_description,
-            'long_description' => $request->long_description,
-        ]);
+            // Clean HTML for long_description
+            'long_description' => Purifier::clean($request->long_description),
+        ];
 
-         return redirect()->route('service.view')->with('error','Services Created Successfully');
+        // Handle image if uploaded
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagename = hexdec(uniqid()) . '.jpg'; // Force safe extension
 
-    } // end mehtod 
+            // Resize and save image
+            Image::make($image)->resize(1920, 1080)->save(public_path('uploads/service/' . $imagename));
+            $serviceData['image'] = 'uploads/service/' . $imagename;
+        }
+
+        // Insert into DB
+        Service::create($serviceData);
+
+        return redirect()->route('service.view')->with('success', 'Service Created Successfully');
+    }
+
 
     public function Editservice($id){
         $service = Service::find($id);
@@ -54,25 +72,37 @@ class serviceController extends Controller
         return view('backend.services.service_edit', compact('service','service_id'));
     }// End of edit_dpo Method
     
-       public function Updateservice(Request $request){
-    //dd($request->all());
-        $service= Service::find($request->dept_id);
-        $service->service_tag = $request->service_tag;
+    public function Updateservice(Request $request)
+    {
+        $service = Service::findOrFail($request->dept_id);
+
+        // Validate input
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'service_tag' => 'nullable|string|max:100',
+            'short_description' => 'required|string|max:500',
+            'long_description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+        ]);
+
         $service->title = $request->title;
+        $service->service_tag = $request->service_tag;
         $service->short_description = $request->short_description;
-        $service->long_description = $request->long_description;
-    
-        if ($request->file('image')) 
-        {
-            $image=$request->image;
-            $imagename=time().'.'.$image->getClientOriginalExtension();
-            $request->image->move('build/uploads/service',$imagename);
-            $service->image='build/uploads/service/'.$imagename;
+        $service->long_description = Purifier::clean($request->long_description); // Safe HTML
+
+        // Handle image if uploaded
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagename = hexdec(uniqid()) . '.jpg';
+
+            Image::make($image)->resize(1920, 1080)->save(public_path('uploads/service/' . $imagename));
+            $service->image = 'uploads/service/' . $imagename;
         }
-        
-        $service->save();      
-       return redirect()->route('service.view')->with('error','service Record Updated Successfully');
-    }// End of update_service Method
+
+        $service->save();
+
+        return redirect()->route('service.view')->with('success', 'Service Record Updated Successfully');
+    }
     
     //..........................BACKEND ENDS HERE ..........................................
 

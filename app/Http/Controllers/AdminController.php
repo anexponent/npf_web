@@ -20,17 +20,24 @@ class AdminController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/admin/npf/login');
     } //End Method
 
     public function AdminRegister(){
+        $user = Auth::user();
+        if (!$user->can('manage users')) {
+            abort(403, 'Unauthorized action.');
+        }
+
         return view('backend.admin.admin_register');
     }//end method
 
     public function AdminRegisterCreate(Request $request){
 
-        // dd($request->all());
-
+        $user = Auth::user();
+        if (!$user->can('manage users')) {
+            abort(403, 'Unauthorized action.');
+        }
         $validatedData = $request->validate([
             'email' => 'required|unique:users|max:65',
             'ap_number' => 'required|unique:users|max:9',
@@ -52,24 +59,39 @@ class AdminController extends Controller
     } // end mehtod 
 
     public function AdminView() {
+        $user = Auth::user();
+        if (!$user->can('manage users')) {
+            abort(403, 'Unauthorized action.');
+        }
         $dpos = User::where('id','>=',1)->orderby('name','ASC')->get(); 
         return view('backend.admin.admin_view', compact('dpos'));
     } //end method admin.index add_view_dpo 
 
     public function DeleteAdmin($id) {
+        $user = Auth::user();
+        if (!$user->can('manage users')) {
+            abort(403, 'Unauthorized action.');
+        }
         $dpo = User::find($id);
         $dpo->delete();
         return redirect()->back()->with('error','DPO Deleted Successfully');
     }// End of delete_product Method //  SAVE THE DELETED RECORDS IN ANNTHER TABLE
 
     public function EditAdmin($id){
+        $user = Auth::user();
+        if (!$user->can('manage users')) {
+            abort(403, 'Unauthorized action.');
+        }
         $dpo = User::find($id);
         $dpo_id = $id;
         return view('backend.admin.admin_edit', compact('dpo','dpo_id'));
     }// End of edit_dpo Method
     
     public function UpdateAdmin(Request $request, $id){
-    
+        $user = Auth::user();
+        if (!$user->can('manage users')) {
+            abort(403, 'Unauthorized action.');
+        }
         $dpo= User::find($id);
         $dpo->name = $request->name;
         $dpo->email = $request->email;

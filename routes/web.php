@@ -460,8 +460,7 @@ Route::controller(AdminController::class)->group(function () {
         Route::get('/delete/admin/{id}', 'DeleteAdmin')->name('delete.admin');
         Route::get('/edit/admin/{id}', 'EditAdmin')->name('edit.admin');
         Route::post('/update/admin/{id}', 'UpdateAdmin')->name('update.admin');
-    }); 
-
+    });
 });
 
 /////////////////////  Admin Routes End ///////////////////////////////////

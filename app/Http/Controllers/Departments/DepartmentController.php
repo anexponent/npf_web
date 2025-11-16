@@ -11,7 +11,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Carbon;
 use RealRashid\SweetAlert\Facades\Alert;
-use Image;
+use Intervention\Image\Facades\Image;
+use Mews\Purifier\Facades\Purifier;
 
 class DepartmentController extends Controller
 {
@@ -22,6 +23,40 @@ class DepartmentController extends Controller
         return view('backend.departments.department_view', compact('departments'));
     } //end method department.index add_view_department 
 
+    public function StoreDepartment(Request $request)
+    {
+        $request->validate([
+            'dig_name' => 'required|string|max:255',
+            'department' => 'required|string|max:255',
+            'rank' => 'nullable|string|max:100',
+            'description' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+        ]);
+    
+        $departmentData = [
+            'dig_name' => $request->dig_name,
+            'department' => $request->department,
+            'rank' => $request->rank,
+            'description' => Purifier::clean($request->description),
+        ];
+    
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagename = hexdec(uniqid()) . '.jpg';
+        
+            Image::make($image)->resize(400, 450)
+                ->save(public_path('build/uploads/department/' . $imagename));
+        
+            $departmentData['image'] = 'build/uploads/department/' . $imagename;
+        }
+    
+        Department::create($departmentData);
+    
+        return redirect()->route('department.view')
+            ->with('success', 'Department Created Successfully');
+    }
+
+
     public function EditDepartment($id){
         $department = Department::find($id);
         $department_id = $id;
@@ -30,31 +65,41 @@ class DepartmentController extends Controller
         return view('backend.departments.department_edit', compact('department','department_id'));
     }// End of edit_dpo Method
     
-    public function UpdateDepartment(Request $request){
-    
-        $department= Department::find($request->dept_id);
+    public function UpdateDepartment(Request $request)
+    {
+        $department = Department::findOrFail($request->dept_id);
+
+        // Validate inputs
+        $request->validate([
+            'dig_name' => 'required|string|max:255',
+            'department' => 'required|string|max:255',
+            'rank' => 'nullable|string|max:100',
+            'description' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+        ]);
+
         $department->dig_name = $request->dig_name;
         $department->department = $request->department;
         $department->rank = $request->rank;
-        $department->description = $request->description;
-    
-        if ($request->file('image')) 
-        {
-            // $image=$request->image;
-            // $imagename=time().'.'.$image->getClientOriginalExtension();
-            // $request->image->move('build/uploads/department',$imagename);
-            // $department->image='build/uploads/department/'.$imagename;
+        $department->description = Purifier::clean($request->description); // Safe HTML
 
+        // Handle image upload
+        if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $name_gen = hexdec(uniqid()). '.'.$image->getClientOriginalExtension();
-            Image::make($image)->resize(400,450)->save('build/uploads/department/'.$name_gen);
-            $save_url = 'build/uploads/department/'.$name_gen;
-            $department->image=$save_url;
+            $imagename = hexdec(uniqid()) . '.jpg'; // Force .jpg
+
+            // Resize and save
+            Image::make($image)->resize(400, 450)
+                ->save(public_path('uploads/department/' . $imagename));
+
+            $department->image = 'uploads/department/' . $imagename;
         }
-        
-        $department->save();      
-       return redirect()->route('department.view')->with('error','Department Record Updated Successfully');
-    }// End of update_department Method
+
+        $department->save();
+
+        return redirect()->route('department.view')
+            ->with('success', 'Department Record Updated Successfully');
+    }
 
     //..........................BACKEND ENDS HERE ..........................................
 

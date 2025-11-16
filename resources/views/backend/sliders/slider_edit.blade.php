@@ -62,7 +62,7 @@
                         </div>
 
                         <div class="input-group mb-3">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">short_description</label>
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Slider Description</label>
                         <input type="text" name="short_description"  class="form-control" required value="{{$slider->short_description}}" placeholder="AP Number">
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="input-group mb-3">
-                          <label for="inputEmail3" class="col-sm-2 col-form-label">DIG Photo</label>
+                          <label for="inputEmail3" class="col-sm-2 col-form-label">Slider Image</label>
                           <div class="col-sm-10">
                           <input type="file" min="0" class="form-control" id="image"  name="image"   value="{{$slider->image}}">
                           </div>

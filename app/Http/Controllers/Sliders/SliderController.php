@@ -11,7 +11,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Carbon;
 use RealRashid\SweetAlert\Facades\Alert;
-use Image;
+use Intervention\Image\Facades\Image;
+use Mews\Purifier\Facades\Purifier;
 
 
 class sliderController extends Controller
@@ -23,6 +24,37 @@ class sliderController extends Controller
         return view('backend.sliders.slider_view', compact('sliders'));
     } //end method slider.index add_view_slider 
 
+    public function StoreSlider(Request $request)
+    {
+        $request->validate([
+            'slider_tag' => 'nullable|string|max:100',
+            'title' => 'required|string|max:255',
+            'short_description' => 'required|string|max:500',
+            'long_description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+        ]);
+    
+        $sliderData = [
+            'slider_tag' => $request->slider_tag,
+            'title' => $request->title,
+            'short_description' => $request->short_description,
+            'long_description' => Purifier::clean($request->long_description),
+        ];
+    
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagename = hexdec(uniqid()) . '.jpg';
+        
+            Image::make($image)->resize(1920, 1080)->save(public_path('uploads/slider/' . $imagename));
+        
+            $sliderData['image'] = 'uploads/slider/' . $imagename;
+        }
+    
+        Slider::create($sliderData);
+    
+        return redirect()->route('slider.view')->with('success', 'Slider Created Successfully');
+    }
+
     public function Editslider($id){
         $slider = Slider::find($id);
         $slider_id = $id;
@@ -31,33 +63,38 @@ class sliderController extends Controller
         return view('backend.sliders.slider_edit', compact('slider','slider_id'));
     }// End of edit_dpo Method
     
-    public function Updateslider(Request $request){
-    
-        $slider= Slider::find($request->dept_id);
+    public function Updateslider(Request $request)
+    {
+        $slider = Slider::findOrFail($request->dept_id);
+
+        // Validate input
+        $request->validate([
+            'slider_tag' => 'nullable|string|max:100',
+            'title' => 'required|string|max:255',
+            'short_description' => 'required|string|max:500',
+            'long_description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+        ]);
+
         $slider->slider_tag = $request->slider_tag;
         $slider->title = $request->title;
         $slider->short_description = $request->short_description;
-        $slider->long_description = $request->long_description;
-    
-        if ($request->file('image')) 
-        {
-            // $image=$request->image;
-            // $imagename=time().'.'.$image->getClientOriginalExtension();
-            // $request->image->move('build/uploads/slider',$imagename);
-            // $slider->image='build/uploads/slider/'.$imagename;
+        $slider->long_description = Purifier::clean($request->long_description); // Safe HTML
 
+        // Handle image if uploaded
+        if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $name_gen = hexdec(uniqid()). '.'.$image->getClientOriginalExtension();
-            Image::make($image)->resize(1920,1080)->save('build/uploads/slider/'.$name_gen);
-            $save_url = 'build/uploads/slider/'.$name_gen;
-            $slider->image=$save_url;
+            $imagename = hexdec(uniqid()) . '.jpg'; // Force .jpg
 
+            Image::make($image)->resize(1920, 1080)->save(public_path('uploads/slider/' . $imagename));
+
+            $slider->image = 'uploads/slider/' . $imagename;
         }
 
-               
-        $slider->save();      
-       return redirect()->route('slider.view')->with('error','slider Record Updated Successfully');
-    }// End of update_slider Method
+        $slider->save();
+
+        return redirect()->route('slider.view')->with('success', 'Slider Record Updated Successfully');
+    }
 
     //..........................BACKEND ENDS HERE ..........................................
 

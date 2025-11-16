@@ -441,7 +441,7 @@
                     </ul>
                 </li>
 
-
+                @can('manage users')
                 <li class="nav-header">USER SETTINGS</li>
                 <li class="nav-item">
                     <a href="{{route('admin.register')}}" class="nav-link">
@@ -455,6 +455,7 @@
                         <p>View Users</p>
                     </a>
                 </li>
+                @endcan
 
             </ul>
         </nav>
