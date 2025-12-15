@@ -38,10 +38,10 @@ class fproController extends Controller
         $image = $request->file('image');
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
 
-        $save_path = public_path('uploads/fpro/'.$name_gen);
+        $save_path = public_path('upload/fpro/'.$name_gen);
         Image::make($image)->resize(500,500)->save($save_path);
 
-        $save_url = 'uploads/fpro/'.$name_gen;
+        $save_url = 'upload/fpro/'.$name_gen;
 
         // Save record
         fpro::insert([
