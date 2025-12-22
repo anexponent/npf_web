@@ -25,47 +25,50 @@ class ManagemController extends Controller
         return view('backend.home.Mgt_Team.add_mgt');
     }
 
-    public function StoreMgtTeam(Request $request){
+    public function StoreMgtTeam(Request $request)
+    {
+        // dd($request->all(), $request->file('team_image'));
         $request->validate([
-            'full_name' => 'required',
-            'rank' => 'required',
-            'designation' => 'required',
-            'team_image' => 'required',
-        ],[
-            'full_name.required' => 'Full Name is Required',
-            'rank.required' => 'Rank  is Required',
+            'full_name'   => 'required|string',
+            'rank'        => 'required|string',
+            'designation' => 'required|string',
+            'team_image'  => 'required|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ], [
+            'full_name.required'   => 'Full Name is Required',
+            'rank.required'        => 'Rank is Required',
             'designation.required' => 'Designation/Posting is Required',
-            'team_image.required' => 'Portrait is Required',
+            'team_image.required'  => 'Portrait is Required',
         ]);
 
-        $image = $request->file('team_image');
-        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+    $image = $request->file('team_image');
 
-        $image_save_path = public_path('upload/MgtTeam_Images/'.$name_gen);
-        Image::make($image)->resize(500,500)->save($image_save_path);
+    $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+    $image_save_path = public_path('upload/MgtTeam_Images/' . $name_gen);
 
-        $save_url = 'upload/MgtTeam_Images/'.$name_gen;
+    Image::make($image)
+        ->resize(500, 500)
+        ->save($image_save_path);
 
-        // Purify designation in case user inputs HTML
-        $config = HTMLPurifier_Config::createDefault();
-        $purifier = new HTMLPurifier($config);
-        $clean_designation = $purifier->purify($request->designation);
+    // Purify designation
+    $config = HTMLPurifier_Config::createDefault();
+    $purifier = new HTMLPurifier($config);
+    $clean_designation = $purifier->purify($request->designation);
 
-        Managem_Team::insert([
-            'full_name' => $request->full_name,
-            'rank' => $request->rank,
-            'designation' => $clean_designation,
-            'team_image' => $save_url,
-            'created_at' => Carbon::now(),
-        ]); 
+    Managem_Team::create([
+        'full_name'   => $request->full_name,
+        'rank'        => $request->rank,
+        'designation' => $clean_designation,
+        'team_image'  => 'upload/MgtTeam_Images/' . $name_gen,
+    ]);
 
-        $notification = [
-            'message' => 'Management Added Successfully', 
-            'alert-type' => 'success'
-        ];
-
-        return redirect()->route('ourmgtTeam.page')->with($notification);
+    return redirect()
+        ->route('ourmgtTeam.page')
+        ->with([
+            'message' => 'Management Added Successfully',
+            'alert-type' => 'success',
+        ]);
     }
+
 
     public function EditMgtTeam($id){
         $mgtteam = Managem_Team::findOrFail($id);
@@ -73,15 +76,17 @@ class ManagemController extends Controller
     }
 
     public function UpdateOurMgtTeam(Request $request){
+
+        // dd($request->all(), $request->file('image'));
+
         $mgt_id = $request->id;
 
         // Purify designation
         $config = HTMLPurifier_Config::createDefault();
         $purifier = new HTMLPurifier($config);
         $clean_designation = $purifier->purify($request->designation);
-        Log::info("Here");
-        if ($request->file('team_image')) {
-            $image = $request->file('team_image');
+        if ($request->file('image')) {
+            $image = $request->file('image');
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
 
             $image_save_path = public_path('upload/MgtTeam_Images/'.$name_gen);

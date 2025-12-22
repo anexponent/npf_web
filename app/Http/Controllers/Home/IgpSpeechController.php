@@ -24,7 +24,7 @@ class IgpSpeechController extends Controller
     
             $aboutpage = Cp_Speech::find(1);
                 return view('backend.information.about_page.about_edit',compact('aboutpage'));
-            }// End Method
+        }// End Method
         
         
         

@@ -75,7 +75,7 @@
               <span class="text-sentence  info">Force Headquartes Garki,</span>
               <span class="text-sentence  info">Shehu Shagari Way, Abuja</span>
 </div>
-              <div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info" href="tel:+2348037168147">+234 8037 168 147  </a></div>
+              <div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info" href="tel:+2348037168147">+234 706 2606 717  </a></div>
               <div class="contact-info-card">
                 <div class="social-icons">
                   <div class="sc-wrapper dir-row sc-size-32">
