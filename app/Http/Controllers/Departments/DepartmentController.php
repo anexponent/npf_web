@@ -67,39 +67,48 @@ class DepartmentController extends Controller
     
     public function UpdateDepartment(Request $request)
     {
-        $department = Department::findOrFail($request->dept_id);
+    $department = Department::findOrFail($request->dept_id);
 
-        // Validate inputs
-        $request->validate([
-            'dig_name' => 'required|string|max:255',
-            'department' => 'required|string|max:255',
-            'rank' => 'nullable|string|max:100',
-            'description' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-        ]);
+    // Validate inputs
+    $request->validate([
+        'dig_name'    => 'required|string|max:255',
+        'department'  => 'required|string|max:255',
+        'rank'        => 'nullable|string|max:100',
+        'description' => 'nullable|string',
+        'image'       => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+    ]);
 
-        $department->dig_name = $request->dig_name;
-        $department->department = $request->department;
-        $department->rank = $request->rank;
-        $department->description = Purifier::clean($request->description); // Safe HTML
+    $department->dig_name    = $request->dig_name;
+    $department->department = $request->department;
+    $department->rank       = $request->rank;
+    $department->description = Purifier::clean($request->description);
 
-        // Handle image upload
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imagename = hexdec(uniqid()) . '.jpg'; // Force .jpg
+    // Handle image upload
+    if ($request->hasFile('image')) {
 
-            // Resize and save
-            Image::make($image)->resize(400, 450)
-                ->save(public_path('uploads/department/' . $imagename));
-
-            $department->image = 'uploads/department/' . $imagename;
+        // Delete old image (important)
+        if ($department->image && file_exists(public_path($department->image))) {
+            unlink(public_path($department->image));
         }
 
-        $department->save();
+        $image     = $request->file('image');
+        $extension = $image->getClientOriginalExtension();
+        $imagename = hexdec(uniqid()) . '.' . $extension;
 
-        return redirect()->route('department.view')
-            ->with('success', 'Department Record Updated Successfully');
+        Image::make($image)
+            ->resize(400, 450)
+            ->save(public_path('uploads/department/' . $imagename));
+
+        $department->image = 'uploads/department/' . $imagename;
     }
+
+    $department->save();
+
+    return redirect()
+        ->route('department.view')
+        ->with('success', 'Department Record Updated Successfully');
+    }
+
 
     //..........................BACKEND ENDS HERE ..........................................
 

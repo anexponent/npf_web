@@ -31,7 +31,8 @@
     <link rel="stylesheet" href="{{asset('build/backend/assets/plugins/summernote/summernote-bs4.min.css')}}">
 
     <!-- Place the first <script> tag in your HTML's <head>//Note This -->
-    <script src="https://cdn.tiny.cloud/1/6g1u56bmwobz625jengy58pie0rt4n9qb0yxyk5p7djv9tc0/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <!-- <script src="https://cdn.tiny.cloud/1/6g1u56bmwobz625jengy58pie0rt4n9qb0yxyk5p7djv9tc0/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script> -->
+    <script src="https://cdn.tiny.cloud/1/h7s85hzcglrryqft5roxk3wz2y6ny89jwes1411ry5w46fxh/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
 
 </head>
 
@@ -151,20 +152,27 @@
     <script src="{{asset('build/backend/assets/dist/js/pages/dashboard.js')}}"></script>
 
     <!-- Place the following <script> and <textarea> tags your HTML's <body> Note This-->
-    <script>
-        tinymce.init({
-        selector: 'textarea', //
-        plugins: 'powerpaste table lists media paste',
-        toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | removeformat',
-        tinycomments_mode: 'embedded',
-        tinycomments_author: 'Author name',
-        mergetags_list: [
-            { value: 'First.Name', title: 'First Name' },
-            { value: 'Email', title: 'Email' },
-        ],
-        ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
-        });
-    </script>
+   <script>
+  tinymce.init({
+    selector: 'textarea',
+    plugins: [
+      // Core editing features
+      'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
+      // Your account includes a free trial of TinyMCE premium features
+      // Try the most popular premium features until Jan 24, 2026:
+      'checklist', 'mediaembed', 'casechange', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'advtemplate', 'ai', 'uploadcare', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown','importword', 'exportword', 'exportpdf'
+    ],
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography uploadcare | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+    tinycomments_mode: 'embedded',
+    tinycomments_author: 'Author name',
+    mergetags_list: [
+      { value: 'First.Name', title: 'First Name' },
+      { value: 'Email', title: 'Email' },
+    ],
+    ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
+    uploadcare_public_key: 'c0960c6bd44a7e1061cb',
+  });
+</script>
 
 
 

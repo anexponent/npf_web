@@ -1,9 +1,5 @@
 @extends('backend.admin_master')
 @section('admin')
-
-
-
-
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <div class="content-header">
@@ -91,7 +87,7 @@
                         <div class="input-group mb-3">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Description</label>
                             <div class="col-sm-10">
-                                <textarea  id="summernote" name="description" cols="150" rows="40">{{$department->description}}</textarea>
+                                <textarea  class="tinymc" id="summernote" name="description" cols="150" rows="40">{{$department->description}}</textarea>
                               </div>
                         </div>
                         
