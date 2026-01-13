@@ -183,6 +183,8 @@ Route::controller(SliderController::class)->group(function () {
         Route::get('/slider/view', 'SliderView')->name('slider.view');
         Route::get('/edit/slider/{id}', 'Editslider')->name('edit.slider');
         Route::post('/update/slider', 'Updateslider')->name('update.slider');
+        Route::get('/add/slider', 'AddSlider')->name('add.slider');
+        Route::post('/add/slider', 'StoreSlider')->name('store.slider');
     });
     Route::get('/home/slider/{id}', 'Homeslider')->name('slider.home');
 });

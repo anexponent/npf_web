@@ -24,6 +24,11 @@ class sliderController extends Controller
         return view('backend.sliders.slider_view', compact('sliders'));
     } //end method slider.index add_view_slider 
 
+    public function AddSlider()
+    {
+        return view('backend.sliders.slider_add');
+    }
+
     public function StoreSlider(Request $request)
     {
         $request->validate([

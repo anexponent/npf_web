@@ -30,7 +30,11 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-    
+                    <div class="d-flex justify-content-end mb-3">
+                        <a href="{{ route('add.slider') }}" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Add Slider
+                        </a>
+                </div>
                 {{-- <div class="row">
                     <div class="col-md-8 offset-md-2">
                         <form action="{{route('slider_search')}}" method="post">
