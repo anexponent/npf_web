@@ -32,7 +32,7 @@ class sliderController extends Controller
     public function StoreSlider(Request $request)
     {
         $request->validate([
-            'slider_tag' => 'nullable|string|max:100',
+            'slider_tag' => 'required|string|max:100',
             'title' => 'required|string|max:255',
             'short_description' => 'required|string|max:500',
             'long_description' => 'required|string',
@@ -121,7 +121,19 @@ class sliderController extends Controller
         return view('frontend.zones.zone_view', compact('zone','zone_name'));
     }// End of edit_dpo Method 
 
-
-
-
+    public function DeleteSlider($id)
+    {
+        $slider = Slider::findOrFail($id);
+    
+        // Delete image file if exists
+        if ($slider->image && file_exists(public_path($slider->image))) {
+            unlink(public_path($slider->image));
+        }
+    
+        $slider->delete();
+    
+        return redirect()
+            ->route('slider.view')
+            ->with('success', 'Slider deleted successfully');
+    }
 }

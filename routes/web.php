@@ -185,6 +185,7 @@ Route::controller(SliderController::class)->group(function () {
         Route::post('/update/slider', 'Updateslider')->name('update.slider');
         Route::get('/add/slider', 'AddSlider')->name('add.slider');
         Route::post('/add/slider', 'StoreSlider')->name('store.slider');
+        Route::post('/delete/slider/{id}', 'DeleteSlider')->name('delete.slider');
     });
     Route::get('/home/slider/{id}', 'Homeslider')->name('slider.home');
 });

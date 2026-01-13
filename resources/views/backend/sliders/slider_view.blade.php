@@ -89,12 +89,21 @@
                                 @endif
                                  />
                             </td>
+                            <td>
+                                <a href="{{ route('edit.slider', $slider->id) }}" class="btn btn-success btn-sm">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a>
 
-
-
-
-                            <td><a onclick="return confirm('Are you Sure you want to Delete this User Profile')" 
-                                class="btn btn-danger" href="#">Delete</a> | <a class="btn btn-success" href="{{route('edit.slider',$slider->id)}}">Edit</a></td>
+                                <form action="{{ route('delete.slider', $slider->id) }}"
+                                      method="POST"
+                                      style="display:inline-block;"
+                                      onsubmit="return confirm('Are you sure you want to delete this slider?')">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash"></i> Delete
+                                    </button>
+                                </form>
+                            </td>
                         </tr>   
                             @endforeach
                 
