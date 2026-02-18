@@ -168,7 +168,7 @@
       'table',
       'visualblocks',
       'wordcount'
-    ]
+    ],
     // plugins: [
     //   // Core editing features
     //   'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
